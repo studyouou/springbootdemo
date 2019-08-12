@@ -1,0 +1,49 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: springdemo
+  datasource:
+    url: jdbc:mysql://192.168.43.201:3306/iam_service?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: mysql123
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+  redis:
+    host: 192.168.43.201
+    port: 6379
+    password: ougenougen
+    jedis:
+          pool:
+            min-idle: 5
+            max-active: 10
+    timeout: 4000
+
+
+ower:
+  username: ougen
+  password: 304489914
+  age: 32
+  birthday: 1996-07-04
+  scop: test
+  frient:
+    - zhangxinyu
+    - nijiati
+    - luoyixuan
+    - zhaoyinyin
+    - wenshuyu
+    - yimingliang
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+logging:
+  config: classpath:log/log4j2.xml

@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: @profile.active@
+test:
+  name: ougen
+#下面的不起作用，因为优先级低
+server:
+  port: 8080

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn" monitorInterval="30">
+    <appenders>
+        <console name="Console" target="SYSTEM_OUT" follow="false">
+            <!--输出日志的格式 -->
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />
+        </console>
+        <File name="LOGFILE" fileName="log/test.log" append="true">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n" />
+        </File>
+    </appenders>
+    <loggers>
+        <!--过滤掉spring和mybatis的一些无用的DEBUG信息 -->
+        <logger name="org.springframework" level="info"></logger>
+        <logger name="org.mybatis" level="info"></logger>
+        <logger name="org.ougen.springbootdemo" level="info"></logger>
+        <root level="info">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="LOGFILE"></appender-ref>
+        </root>
+    </loggers>
+</configuration>
